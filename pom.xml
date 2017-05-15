@@ -227,6 +227,11 @@
                 <!-- <configuration> <path>/</path> <port>8899</port> </configuration> -->
        
 		<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-maven-plugin -->
+<plugin>
+   <groupId>com.google.appengine</groupId>
+   <artifactId>appengine-maven-plugin</artifactId>
+   <version>1.9.51</version>
+</plugin>
 
 		
         </plugins>
