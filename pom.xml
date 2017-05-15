@@ -20,6 +20,11 @@
      <user>kranthi</user>
      <password>abc123$</password>
      <database>sqldemo</database>
+	
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <appengine.target.version>1.9.53</appengine.target.version>
+        <datanucleus.version>3.2.0-m1</datanucleus.version>
+   
 	</properties>
     <dependencies>
    <dependency> <!-- ONLY USED LOCALY -->
@@ -32,6 +37,11 @@
   <artifactId>mysql-socket-factory</artifactId>
   <version>1.0.2</version>
      </dependency>
+	    <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-tools-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -64,7 +74,17 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
- 
+ <dependency>
+          <groupId>com.google.endpoints</groupId>
+          <artifactId>endpoints-framework-tools</artifactId>
+          <version>2.0.7</version>
+          <exclusions>
+            <exclusion>
+              <groupId>com.google.appengine</groupId>
+              <artifactId>appengine-api-1.0-sdk</artifactId>
+            </exclusion>
+          </exclusions>
+</dependency>
  
         <!-- JSP API -->
         <!-- http://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
@@ -211,7 +231,40 @@
    <artifactId>appengine-maven-plugin</artifactId>
    <version>1.3.1</version>
 </plugin>
-		
+		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-invoker-plugin</artifactId>
+                <version>2.0.0</version>
+                <configuration>
+                    <projectsDirectory>src/it</projectsDirectory>
+                    <pomIncludes>
+                        <pomInclude>*/pom.xml</pomInclude>
+                    </pomIncludes>
+                    <postBuildHookScript>verify</postBuildHookScript>
+                    <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                    <goals>
+                        <goal>appengine:update</goal>
+                        <goal>appengine:update_cron</goal>
+                        <goal>appengine:update_dos</goal>
+                        <goal>appengine:update_indexes</goal>
+                        <goal>appengine:update_queues</goal>
+                        <goal>appengine:vacuum_indexes</goal>
+                        <goal>appengine:set_default_version</goal>
+                        <goal>appengine:rollback</goal>
+                    </goals>
+                    <settingsFile>src/it/settings.xml</settingsFile>
+                    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                    <cloneClean>true</cloneClean>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+</plugin>
         </plugins>
     </build>
  
