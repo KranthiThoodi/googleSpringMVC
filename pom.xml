@@ -1,15 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                     http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
  
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.o7planning</groupId>
     <artifactId>SpringMVCAnnotationShoppingCart</artifactId>
+	
     <packaging>war</packaging>
     <version>1.0.0</version>
+	
     <name>SpringMVCAnnotationShoppingCart Maven Webapp</name>
+	
     <url>http://maven.apache.org</url>
+	
+	<prerequisites>
+        <maven>3.1.0</maven>
+</prerequisites>
  <properties>
 <!-- INSTANCE_CONNECTION_NAME from Cloud Console > SQL > Instance Details > Properties
      or gcloud sql instances describe <instance>
