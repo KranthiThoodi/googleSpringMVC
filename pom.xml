@@ -38,7 +38,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${appengine.target.version}</version>
+            <version>1.9.15</version>
 </dependency>
 	
    
@@ -244,9 +244,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <plugin>
                 <groupId>com.google.appengine</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.target.version}</version>
+                <version>1.9.15</version>
                 <configuration>
                    <fullScanSeconds>1</fullScanSeconds>
+		 <enableJarClasses>false</enableJarClasses>
                 </configuration>
             </plugin>
             <plugin>
