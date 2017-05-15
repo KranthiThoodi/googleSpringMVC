@@ -173,11 +173,7 @@
         </dependency>
 	    
  <!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-maven-plugin -->
-<dependency>
-    <groupId>com.google.appengine</groupId>
-    <artifactId>appengine-maven-plugin</artifactId>
-    <version>1.9.51</version>
-</dependency>
+
  
         <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
        <!--  <dependency>
