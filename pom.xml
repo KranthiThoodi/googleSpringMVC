@@ -171,10 +171,12 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.0.5.Final</version>
         </dependency>
- <dependency>
+	    
+ <!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-maven-plugin -->
+<dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-maven-plugin</artifactId>
-    <version>1.9.52</version>
+    <version>1.9.51</version>
 </dependency>
  
         <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
