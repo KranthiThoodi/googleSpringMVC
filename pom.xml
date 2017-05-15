@@ -211,7 +211,7 @@
    <artifactId>appengine-maven-plugin</artifactId>
    <version>1.9.52</version>
 </plugin>
-<plugins>
+
    <plugin>
      <groupId>com.google.cloud.tools</groupId>
      <artifactId>appengine-maven-plugin</artifactId>
@@ -222,7 +222,14 @@
      <artifactId>jetty-maven-plugin</artifactId>
      <version>9.3.7.v20160115</version>
    </plugin>
-</plugins>
+<plugins>
+        <plugin>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-maven-plugin</artifactId>
+            <version>1.9.9</version>
+        </plugin>
+    </plugins>
+		
         </plugins>
     </build>
  
