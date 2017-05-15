@@ -21,27 +21,21 @@
      <password>abc123$</password>
      <database>sqldemo</database>
 	
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <appengine.target.version>1.9.53</appengine.target.version>
-        <datanucleus.version>3.2.0-m1</datanucleus.version>
-   
-	</properties>
+  </properties>
+	
     <dependencies>
-   <dependency> <!-- ONLY USED LOCALY -->
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-java</artifactId>
-  <version>5.1.40</version>  <!-- v5.x.x is Java 7, v6.x.x is Java 8 -->
+     <dependency> <!-- ONLY USED LOCALY -->
+     <groupId>mysql</groupId>
+     <artifactId>mysql-connector-java</artifactId>
+     <version>5.1.40</version>  <!-- v5.x.x is Java 7, v6.x.x is Java 8 -->
     </dependency>
-  <dependency>
-  <groupId>com.google.cloud.sql</groupId>
+  
+	    <dependency>
+      <groupId>com.google.cloud.sql</groupId>
   <artifactId>mysql-socket-factory</artifactId>
   <version>1.0.2</version>
      </dependency>
-	    <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-tools-sdk</artifactId>
-            <version>${appengine.target.version}</version>
-</dependency>
+	    
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -74,17 +68,6 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
- <dependency>
-          <groupId>com.google.endpoints</groupId>
-          <artifactId>endpoints-framework-tools</artifactId>
-          <version>2.0.7</version>
-          <exclusions>
-            <exclusion>
-              <groupId>com.google.appengine</groupId>
-              <artifactId>appengine-api-1.0-sdk</artifactId>
-            </exclusion>
-          </exclusions>
-</dependency>
  
         <!-- JSP API -->
         <!-- http://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
@@ -223,12 +206,12 @@
                 <!-- <configuration> <path>/</path> <port>8899</port> </configuration> -->
        
 		<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-maven-plugin -->
+	
 <plugin>
    <groupId>com.google.appengine</groupId>
    <artifactId>appengine-maven-plugin</artifactId>
-   <version>1.9.51</version>
+   <version>1.9.52</version>
 </plugin>
-
 		
         </plugins>
     </build>
