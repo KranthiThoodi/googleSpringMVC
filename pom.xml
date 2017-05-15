@@ -29,7 +29,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
      <database>sqldemo</database>
 	 
         <appengine.app.version>1</appengine.app.version>
-        <appengine.target.version>1.9.30</appengine.target.version>
+        <appengine.target.version>1.9.52</appengine.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
