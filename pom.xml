@@ -20,10 +20,21 @@
      <user>kranthi</user>
      <password>abc123$</password>
      <database>sqldemo</database>
-	
-  </properties>
-	
+
+	 <appengine.app.version>1</appengine.app.version>
+        <appengine.target.version>1.9.52</appengine.target.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
+        <!-- Compile/runtime dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+</dependency>
+	
+   
      <dependency> <!-- ONLY USED LOCALY -->
      <groupId>mysql</groupId>
      <artifactId>mysql-connector-java</artifactId>
