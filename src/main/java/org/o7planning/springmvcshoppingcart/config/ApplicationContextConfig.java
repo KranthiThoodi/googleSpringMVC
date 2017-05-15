@@ -69,10 +69,12 @@ public class ApplicationContextConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
  
         // See: ds-hibernate-cfg.properties
-        dataSource.setDriverClassName(env.getProperty("ds.database-driver"));
-        dataSource.setUrl(env.getProperty("ds.url"));
-        dataSource.setUsername(env.getProperty("ds.username"));
-        dataSource.setPassword(env.getProperty("ds.password"));
+        //dataSource.setDriverClassName(env.getProperty("ds.database-driver"));
+        //dataSource.setUrl(env.getProperty("ds.url"));
+        //dataSource.setUsername(env.getProperty("ds.username"));
+        //dataSource.setPassword(env.getProperty("ds.password"));
+        dataSource.setDriverClassName("com.mysql.jdbc.GoogleDriver");
+        dataSource.setUrl(System.getProperty("ae-cloudsql.cloudsql-database-url"));
          
         System.out.println("## getDataSource: " + dataSource);
          
